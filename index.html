@@ -25,13 +25,58 @@
     <script src="js/drew.js"></script>
 
     <title>???</title>
+    <style>
+        .jumbotron {
+            padding: 5px;
+            border-radius: 10px;
+        }
+        
+        body {
+            margin: 10px;
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif
+        }
+        
+        #box1 {
+            width: 70%;
+            /*height: 180px;*/
+            margin: 10px;
+            padding: 10px;
+            background: #000;
+            border-radius: 24px;
+            text-align: center;
+        }
+        
+        #box1 h1 {
+            color: white;
+            white-space: pre;
+            font-size: xxx-large;
+        }
+        
+        #box1 h2 {
+            color: white;
+            white-space: pre;
+            font-size: x-large;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark badge-dark justify-content-sm-between" style="margin-bottom: 10px;">
-        <a class="navbar-brand" href="index.html"><img alt="logo" style="width:40px;"></a>
-        <h1>Date here</h1>
-        <a href="help.html" class="nav-link"><img src="images/questionMark.png" alt="More Info" style="height: 35px;"></a>
+    <nav class="navbar navbar-expand-md justify-content-sm-around" style="margin-bottom: 10px;">
+        <div class="jumbotron" style="background-color: black;">
+            <a class="navbar-brand" href="index.html"><img alt="logo" style="width:40px;"></a>
+        </div>
+        <!--center-->
+        <div id="box1">
+            <h1 id="currentDate">Loading...</h1>
+            <h2 id="currentTime">Loading...</h2>
+        </div>
+        <!--center-->
+        <script>
+            setInterval(GetDate, 1000);
+        </script>
+        <div class="jumbotron" style="background-color: black;">
+            <a href="help.html" class="nav-link"><img src="images/questionMark.png" alt="More Info" style="height: 35px;"></a>
+        </div>
     </nav>
     <div class="container">
         <div class="row justify-content-md-center ">
