@@ -17,6 +17,37 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <!-- Testing rounded corner box -->
+    <style type="text/css">
+        body {
+            margin: 10px;
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif
+        }
+        
+        #box1 {
+            width: 1200px;
+            height: 180px;
+            margin: 10px;
+            padding: 10px;
+            background: #000;
+            border-radius: 24px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        #box1 h1 {
+            color: white;
+            white-space: pre;
+            font-size: xxx-large;
+        }
+        
+        #box1 h2 {
+            color: white;
+            white-space: pre;
+            font-size: x-large;
+        }
+    </style>
+
 
     <!-- JS -->
     <script src="../js/eric.js"></script>
@@ -25,16 +56,16 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark badge-dark" style="margin-bottom: 10px;">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavBar"><span class="navbar-toggler-icon"></span></button>
-        <div id="collapsibleNavBar" class="collapse navbar-collapse justify-content-md-center">
-            <ul class="navbar-nav nav">
-                <li class="nav-item">
-                    <h1>Date here</h1>
-                </li>
-            </ul>
+    <center>
+        <div id="box1">
+            <h1 id="currentDate">Loading...</h1>
+            <h2 id="currentTime">Loading...</h2>
         </div>
-    </nav>
+    </center>
+    <script>
+        setInterval(GetDate, 1000);
+    </script>
+
 </body>
 
 </html>
