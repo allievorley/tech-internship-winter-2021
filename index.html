@@ -31,31 +31,36 @@
             border-radius: 10px;
         }
         
-        body {
-            margin: 10px;
-            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif
-        }
-        
-        #box1 {
-            width: 70%;
-            /*height: 180px;*/
-            margin: 10px;
-            padding: 10px;
-            background: #000;
-            border-radius: 24px;
+        #DateBox {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 72%;
+            min-height: 180px;
+            white-space: pre;
+            border-radius: 36px;
+            position: static;
+            margin-top: 12px;
+            white-space: pre;
             text-align: center;
         }
         
-        #box1 h1 {
-            color: white;
-            white-space: pre;
+        #DateBox h1 {
             font-size: xxx-large;
         }
         
-        #box1 h2 {
-            color: white;
-            white-space: pre;
+        #DateBox h2 {
             font-size: x-large;
+        }
+        
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+        
+        .light-mode {
+            background-color: white;
+            color: black;
         }
     </style>
 </head>
@@ -65,12 +70,10 @@
         <div class="jumbotron" style="background-color: black;">
             <a class="navbar-brand" href="index.html"><img alt="logo" style="width:40px;"></a>
         </div>
-        <!--center-->
-        <div id="box1">
+        <div class="dark-mode" id="DateBox">
             <h1 id="currentDate">Loading...</h1>
             <h2 id="currentTime">Loading...</h2>
         </div>
-        <!--center-->
         <script>
             setInterval(GetDate, 1000);
         </script>
