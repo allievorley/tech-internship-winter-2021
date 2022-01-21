@@ -5,13 +5,25 @@ function GetDate() {
         "June", "July", "August", "September", "October",
         "November", "December"
     ];
-    let dateobj = document.getElementById("currentDate");
-    let timeobj = document.getElementById("currentTime");
+    let time = "";
     let currDate = new Date();
-    let time = currDate.getHours() + ":" + currDate.getMinutes() + ":" + currDate.getSeconds();
+    let afternoon = false;
+    let hours = currDate.getHours();
+    if (hours > 12) {
+        hours = hours % 12;
+        afternoon = true;
+    } else if (hours == 12) {
+        afternoon = true;
+    }
+    time = ("0" + hours).slice(-2) + ":" + ("0" + currDate.getMinutes()).slice(-2) + ":" + ("0" + currDate.getSeconds()).slice(-2);
+    if (afternoon) {
+        time = time += " PM"
+    } else {
+        time = time += " AM"
+    }
     let date = months[currDate.getMonth()] + " " + currDate.getDate() + ", " + currDate.getFullYear();
-    dateobj.innerHTML = date;
-    timeobj.innerHTML = time;
+    document.getElementById("currentDate").innerHTML = date;
+    document.getElementById("currentTime").innerHTML = time;
     // console.log(time + "\n" + date);
 }
 
