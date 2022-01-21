@@ -29,7 +29,15 @@ function GetDate() {
 
 // Function to toggle between light and dark mode
 function DarkModeToggle() {
-
+    let body = document.body;
+    let date = document.getElementById("DateBox");
+    if (body.className == "light-mode") {
+        body.className = "dark-mode";
+        date.className = "light-mode";
+    } else {
+        body.className = "light-mode";
+        date.className = "dark-mode";
+    }
 }
 
 // GetDate();

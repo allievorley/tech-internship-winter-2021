@@ -19,30 +19,35 @@
 
     <!-- Testing rounded corner box -->
     <style type="text/css">
-        .DateBox {
+        #DateBox {
             display: flex;
             justify-content: center;
             flex-direction: column;
             width: 72%;
             min-height: 180px;
-            background-color: black;
-            color: white;
             white-space: pre;
             border-radius: 36px;
             position: static;
             margin-top: 12px;
+            white-space: pre;
         }
         
-        .DateBox h1 {
-            color: white;
-            white-space: pre;
+        #DateBox h1 {
             font-size: xxx-large;
         }
         
-        .DateBox h2 {
-            color: white;
-            white-space: pre;
+        #DateBox h2 {
             font-size: x-large;
+        }
+        
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+        
+        .light-mode {
+            background-color: white;
+            color: black;
         }
     </style>
 
@@ -53,9 +58,9 @@
     <title>Eric Testing Page</title>
 </head>
 
-<body>
+<body class="light-mode">
     <center>
-        <div class="DateBox">
+        <div class="dark-mode" id="DateBox">
             <h1 id="currentDate">Loading...</h1>
             <h2 id="currentTime">Loading...</h2>
         </div>
@@ -63,6 +68,9 @@
     <script>
         setInterval(GetDate, 1000);
     </script>
+    <button id="DarkModeButton" onclick="DarkModeToggle();" type="button" class="btn btn-info">
+        <!-- <img id="icon" src="../images/editIcon.png" alt="Edit"> -->
+    </button>
 
 </body>
 
